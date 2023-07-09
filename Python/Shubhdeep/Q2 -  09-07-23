@@ -1,0 +1,20 @@
+def largest_product(numbers):
+    distinct_numbers = set(numbers)
+    if len(distinct_numbers) < 2:
+        return -1
+
+    sorted_numbers = sorted(distinct_numbers, reverse=True)
+    product = sorted_numbers[0] * sorted_numbers[1]
+    return product
+
+def main():
+    try:
+        user_input = "1 8 2 9 1 0 7 8 2 1 10"  
+        numbers = list(map(int, user_input.split()))
+        result = largest_product(numbers)
+        print("Product Of Largest Distinct Numbers:", result)
+    except ValueError:
+        print("Invalid input. Please enter space-separated integers only.")
+
+if __name__ == "__main__":
+    main()
