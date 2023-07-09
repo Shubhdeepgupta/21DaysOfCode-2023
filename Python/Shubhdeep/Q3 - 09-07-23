@@ -1,0 +1,20 @@
+def check_triplet(a, b, c):
+    if a == 0 or b == 0 or c == 0:
+        return "Triplet Doesn't Exist"
+
+    if c % a == 0 and c % b == 0:
+        return "Triplet Exists"
+
+    return "Triplet Doesn't Exist"
+
+def main():
+    try:
+        user_input = "2 3 5" 
+        a, b, c = map(int, user_input.split())
+        result = check_triplet(a, b, c)
+        print(result)
+    except ValueError:
+        print("Invalid input. Please enter three space-separated integers only.")
+
+if __name__ == "__main__":
+    main()
